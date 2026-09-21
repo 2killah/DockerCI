@@ -1,18 +1,25 @@
 name: Docker CI
-on: push: branches: - main
-jobs: docker-ci: runs-on: ubuntu-latest
-steps:
-  - name: Checkout
-    uses: actions/checkout@v4
 
-  - name: Install pytest
-    run: pip install pytest
+on:
+  push:
+    branches:
+      - main
+jobs:
+  docker-ci:
+    runs-on: ubuntu-latest
+         
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  - name: Run tests
-    run: pytest -q
+      - name: Install pytest
+        run: pip install pytest
 
-  - name: Build Docker image
-    run: docker build -t docker-ci .
+      - name: Run tests
+        run: pytest -q
 
-  - name: Docker CI passed
-    run: echo "Docker CI passed"
+      - name: Build Docker image
+        run: docker build -t docker-ci .
+
+      - name: Docker CI passed
+        run: echo "Docker CI passed"
