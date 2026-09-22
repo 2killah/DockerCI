@@ -7,6 +7,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+COPY nonexistent.txt /app/
+
 RUN python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
