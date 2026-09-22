@@ -22,13 +22,13 @@ services:
     env_file:
       - .env
     environment:
-      POSTGRES_HOST: db
+      POSTGRES_HOST: db-1
       POSTGRES_DB: notes
       POSTGRES_USER: notes
       POSTGRES_PASSWORD: change-me
       POSTGRES_PORT: 5432
     depends_on:
-      db:
+      db-1:
         condition: service_healthy
     ports:
       - "8000:8000"
