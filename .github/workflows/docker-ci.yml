@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  IMAGE_NAME: ghcr.io/maggich/notes-api
+  IMAGE_NAME: ghcr.io/2killah/notes-api
 
 jobs:
   test:
